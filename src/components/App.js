@@ -4,8 +4,6 @@ import {
   Layout, Menu, Breadcrumb, Icon,
 } from 'antd';
 
-import ClassTreeView from './ClassTreeView'
-import PropertyEditor from './PropertyEditor'
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -36,7 +34,7 @@ const App = () => {
 					height: '100vh',
 					position: 'fixed'
 				   }}>
-				<ClassTreeView />
+				
 	  	 	</Sider>
 		  	<Layout style={{ marginLeft: 300, padding: '0 24px 24px' }}>
 		        <Breadcrumb style={{ margin: '16px 0' }}>
@@ -49,7 +47,7 @@ const App = () => {
 		           overflow: 'initial'
 		        }}
 		        >
-		  	 		<PropertyEditor />
+		  	 	
 		 		</Content>
 		 	</Layout>
 		</Layout>
