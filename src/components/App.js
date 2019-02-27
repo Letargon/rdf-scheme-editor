@@ -20,7 +20,7 @@ const App = () => {
 					theme="dark"
 					mode="horizontal"
 					defaultSelectedKeys={['1']}
-					style={{ lineHeight: '64px'}}
+					style={{ lineHeight: '64px' }}
 				>
 					<Menu.Item key="1">nav 1</Menu.Item>
 					<Menu.Item key="2">nav 2</Menu.Item>
@@ -30,7 +30,7 @@ const App = () => {
 
 			<Layout >
 				<Sider width={201}
-				
+
 					style={{
 						background: '#fff', overflow: 'auto',
 						height: '100%', position: 'fixed'
@@ -40,23 +40,20 @@ const App = () => {
 					<Menu
 						mode="inline"
 						defaultSelectedKeys={['14']}
-						
 						style={{
 							height: '100%', borderRight: 0, width: 200, padding: 0,
 						}}
 					>
 						<MenuItemGroup key="g1" title={<span><b>RDF4J Server</b></span>}
-							style={{ background: "#E8EAED" }} > 
+							style={{ background: "#E8EAED" }} >
 						</MenuItemGroup>
 
 						<SubMenu key="sub1" title={<span><b>Repositories</b></span>}>
-						
 							<Menu.Item key="0">New repository</Menu.Item>
 							<Menu.Item key="1">Delete repository</Menu.Item>
-						
 						</SubMenu>
 
-						<MenuItemGroup key="g3" title={<span><b>Explore</b></span>}>
+						<SubMenu key="sub2" title={<span><b>Explore</b></span>}>
 							<Menu.Item key="2">Summary</Menu.Item>
 							<Menu.Item key="3">Namespaces</Menu.Item>
 							<Menu.Item key="4">Contexts</Menu.Item>
@@ -65,19 +62,18 @@ const App = () => {
 							<Menu.Item key="7">Query</Menu.Item>
 							<Menu.Item key="8">Saved Queries</Menu.Item>
 							<Menu.Item key="9">Export</Menu.Item>
-						</MenuItemGroup>
+						</SubMenu>
 
-
-						<MenuItemGroup key="g4" title={<span><b>Modify</b></span>}>
+						<SubMenu key="sub3" title={<span><b>Modify</b></span>}>
 							<Menu.Item key="10">SPARQL Update</Menu.Item>
 							<Menu.Item key="11">Add</Menu.Item>
 							<Menu.Item key="12">Remove</Menu.Item>
 							<Menu.Item key="13">Clear</Menu.Item>
-						</MenuItemGroup>
+						</SubMenu>
 
-						<MenuItemGroup key="g5" title={<span><b>System</b></span>}>
+						<SubMenu key="sub4" title={<span><b>System</b></span>}>
 							<Menu.Item key="14">Information</Menu.Item>
-						</MenuItemGroup>
+						</SubMenu>
 
 					</Menu>
 				</Sider>
@@ -90,12 +86,10 @@ const App = () => {
 					</Breadcrumb>
 
 					<Content style={{
-						margin: '24px 16px 0',
-						overflow: 'initial'
-					}}
-					>
-
+						margin: '24px 16px 0', overflow: 'initial'
+					}}>
 					</Content>
+
 				</Layout>
 			</Layout>
 		</Layout>
