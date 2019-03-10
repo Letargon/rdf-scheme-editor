@@ -6,23 +6,21 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 export default class SiderMenu extends Component {
+
+    
+
     render() {
         return (
-            <Sider
-                style={{
-                    overflow: 'auto',
-                    height: '100%', position: 'fixed'
-                }}
-            >
-                <Menu
-                    theme="dark"
-                    mode="inline"
-                    defaultSelectedKeys={['14']}
-                    defaultOpenKeys={['sub1']}
-                    style={{ height: '100%', width: 200 }}
-                >
+            <Sider style={SiderStyle}>
+
+                <Menu style={MenuStyle} 
+                theme="dark"
+                mode="inline"
+                defaultSelectedKeys= {['14']}
+                defaultOpenKeys={['sub1']}
+                >                
                     <MenuItemGroup key="g1" title={<span><b>RDF4J Server</b></span>}
-                        style={{ background: "#C89D4F" }} >
+                        style={TitleMenuStyle} >
                     </MenuItemGroup>
 
                     <SubMenu key="sub1" title={<span><b>Repositories</b></span>}>
@@ -56,4 +54,20 @@ export default class SiderMenu extends Component {
             </Sider>
         );
     }
+}
+
+const SiderStyle = {
+    overflow: 'auto',
+    height: '100%',
+    position: 'fixed'
+}
+
+const MenuStyle = {    
+    height: '100%',
+    width: 200
+}
+
+//RDF4J Server
+const TitleMenuStyle = {
+    background: "#C89D4F",
 }

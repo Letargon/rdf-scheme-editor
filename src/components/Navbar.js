@@ -3,10 +3,7 @@ import logo from "../logo.png";
 import { Layout, Menu } from 'antd';
 import { Link, Router } from "react-router-dom";
 
-
-
 const { Header } = Layout;
-
 
 export default class Navbar extends Component {
     render() {
@@ -17,9 +14,9 @@ export default class Navbar extends Component {
                     theme="dark"
                     mode="horizontal"
                     //defaultSelectedKeys={['1']}
-                    style={{ lineHeight: '64px', margin: 0 }}
+                    style={NavMenuStyle}
                 >
-                    <img src={logo} alt="rdf4j" style={{ height: '59px' }} />
+                    <img src={logo} alt="rdf4j" style={LogoStyle} />
                     <Menu.Item key="1">Welcome</Menu.Item>
 
                     {/*
@@ -32,4 +29,15 @@ export default class Navbar extends Component {
             </Header>
         );
     }
+}
+
+//Menu
+const NavMenuStyle = {
+    lineHeight: '64px', 
+    margin: 0,
+}
+
+//img
+const LogoStyle = {
+    height: '58px',
 }

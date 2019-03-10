@@ -11,32 +11,29 @@ function handleChange(value) {
 }
 
 export default class MainForm extends Component {
-
     render() {
         return (
-            <Layout style={{ marginLeft: 200, padding: '0 24px 24px' }}>
+            <Layout style={MainLayoutStyle}>
 
-                <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb style={BreadcrumbStyle}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>
                     <Breadcrumb.Item>App</Breadcrumb.Item>
                 </Breadcrumb>
 
-                <Content style={{
-                    margin: '24px 16px 0',
-                    overflow: 'initial'
-                }}
-                >
+                <Content style={ContextStyle}>
                     {/* 
                     <PropertyEditor />
                     */}
 
+                    <h1 style={H1TitleStyle}>New Repository</h1>
+                    <hr />
+
                     <Select
                         defaultValue="1"
-                        style={{ width: '100%', maxWidth: '500px', marginBottom: 10 }}
+                        style={SelectStyle}
                         onChange={handleChange}
                     >
-
                         <Option value="1">In Memory Store</Option>
                         <Option value="2">In Memory Store RDF Schema</Option>
                         <Option value="3">In Memory Store RDF Schema and Direct Type Hierarchy</Option>
@@ -56,39 +53,78 @@ export default class MainForm extends Component {
                         <Option value="17">Remote RDF Store</Option>
                         <Option value="18">SPARQL endpoint proxy</Option>
                         <Option value="19">Federation Store</Option>
-
                     </Select>
 
                     <br />
-
-                    <Input
-                        placeholder="ID"
-                        style={{ width: '100%', maxWidth: '500px', marginBottom: 10 }}
-                        mode="horizontal"
-                    />
-
+                    <Input placeholder="ID" style={InputIdStyle} mode="horizontal" />
+                    <br />
+                    <Input placeholder="Title" style={InputTitleStyle} mode="horizontal" />
                     <br />
 
-                    <Input
-                        placeholder="Title"
-                        style={{ width: '100%', maxWidth: '500px', marginBottom: 10 }}
-                        mode="horizontal"
-                    />
-
-                    <br />
-
-                    <div style={{ width: '100%', maxWidth: '550px' }}>
-                        <Button
-                            style={{ position: 'absolute' }}
-                        >Next</Button>
-
-                        <Button
-                            style={{ marginLeft: '77.5%', }}
-                        >Cancel</Button>
+                    <div style={DivStyle}>
+                        <Button style={ButtNextStyle}>Next</Button>
+                        <Button style={ButtCancelStyle}>Cancel</Button>
                     </div>
 
                 </Content>
             </Layout>
         );
     }
+}
+
+//New Repository
+const H1TitleStyle = {
+    margin: 0,
+}
+
+//home-list-app
+const BreadcrumbStyle = {
+    margin: '20px',
+}
+
+const MainLayoutStyle = {
+    marginLeft: 200,
+    padding: '0',
+}
+
+const ContextStyle = {
+    margin: '0 20px 0',
+    overflow: 'initial',
+}
+
+//In memory store
+const SelectStyle = {
+    width: '100%',
+    maxWidth: '500px',
+    marginBottom: 10,
+}
+
+//ID
+const InputIdStyle = {
+    width: '100%',
+    maxWidth: '500px',
+    marginBottom: 10,
+}
+
+//Title
+const InputTitleStyle = {
+    width: '100%',
+    maxWidth: '500px',
+    marginBottom: 10,
+}
+
+//div
+const DivStyle = {
+    width: '100%', 
+    maxWidth: '550px',
+}
+
+//Next
+const ButtNextStyle = {
+    position: 'absolute',
+}
+
+//Cancel
+const ButtCancelStyle = {
+    marginLeft: '77.5%',
 }
