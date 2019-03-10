@@ -1,30 +1,27 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
 import 'antd/dist/antd.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import SiderMenu from "../components/SiderMenu";
-import MainForm from "../components/MainForm";
+import Navbar from "./Navbar";	//Шапка
+import SiderMenu from "./SiderMenu"; //Боковое меню
+import NewRepository from "./NewRepository";
+import SystemInformation from "./SystemInformation";
 
 class App extends Component {
 	render() {
 		return (
 			<React.Fragment>
-
 				<Navbar />
 				<SiderMenu />
-				{/*
-					<MainForm />
-				*/}
-
-				<MainForm />
-					
-
-				
-
+				<Router>
+					<Switch>
+						<Route exact path="/" component={SystemInformation} />
+						<Route path="/NewRep" component={NewRepository} />
+					</Switch>
+				</Router>
 			</React.Fragment>
 		);
 	}
 }
 
-export default App
+export default App;

@@ -1,27 +1,21 @@
+/*
+    Страница Repositories/New repository
+*/
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Link } from "react-router-dom";
+import { Layout } from 'antd';
 import { Select, Input, Button } from 'antd';
+
+import Pathinfo from "./PathInfo"; //home-list-app
 
 const { Content } = Layout;
 const Option = Select.Option;
 
-function handleChange(value) {
-    console.log(`selected ${value}`);
-}
-
-export default class MainForm extends Component {
+export default class NewRepository extends Component {
     render() {
         return (
             <Layout style={MainLayoutStyle}>
-
-                <Breadcrumb style={BreadcrumbStyle}>
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
-
-                <Content style={ContextStyle}>
+                <Pathinfo />
+                <Content style={ContentStyle}>
                     {/* 
                     <PropertyEditor />
                     */}
@@ -32,7 +26,6 @@ export default class MainForm extends Component {
                     <Select
                         defaultValue="1"
                         style={SelectStyle}
-                        onChange={handleChange}
                     >
                         <Option value="1">In Memory Store</Option>
                         <Option value="2">In Memory Store RDF Schema</Option>
@@ -72,22 +65,17 @@ export default class MainForm extends Component {
     }
 }
 
-//New Repository
-const H1TitleStyle = {
-    margin: 0,
-}
-
-//home-list-app
-const BreadcrumbStyle = {
-    margin: '20px',
-}
-
 const MainLayoutStyle = {
     marginLeft: 200,
     padding: '0',
 }
 
-const ContextStyle = {
+//New Repository
+const H1TitleStyle = {
+    margin: 0,
+}
+
+const ContentStyle = {
     margin: '0 20px 0',
     overflow: 'initial',
 }
@@ -115,7 +103,7 @@ const InputTitleStyle = {
 
 //div
 const DivStyle = {
-    width: '100%', 
+    width: '100%',
     maxWidth: '550px',
 }
 
